@@ -1,0 +1,62 @@
+/* Framer Motion ile uyumlu özel animasyon sınıfları */
+
+/* Keyframes tanımları */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Özel animasyon sınıfları */
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Sahne geçiş animasyonları */
+.scene-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scene-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.scene-transition-exit {
+  opacity: 1;
+}
+
+.scene-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}

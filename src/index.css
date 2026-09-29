@@ -1,65 +1,174 @@
+/* Font Imports from Local Files */
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Tailwind CSS base layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ── Dark Mode Tokens ── */
+/* Import global styles */
+@import './styles/globals.css';
+
+/* Merged from globals.css */
+/* Premium Global Styles for Lovebloom Cinematic Experience */
+
+/* Font Imports from Local Files */
+@font-face {
+  font-family: 'Outfit';
+  src: url('../assets/fonts/Outfit-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../assets/fonts/Outfit-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../assets/fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../assets/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base CSS Variables for Light Mode (Default) */
+:root {
+  --color-primary: 0 100% 27%;      /* #8B0000 */
+  --color-secondary: 288 40% 88%;   /* #E0BBE4 */
+  --color-accent: 51 100% 50%;      /* #FFD700 */
+
+  --background-base: 0 0% 100%;     /* White background for light mode */
+  --text-primary: 222 47% 11%;      /* Dark text */
+  --text-muted: 215 15% 45%;        /* Muted dark text */
+
+  --glass-overlay-rgb: 255, 255, 255;
+  --glass-bg-opacity: 0.6;
+  --glass-border-opacity: 0.15;
+}
+
+/* Dark Mode Variables */
 .dark {
-  --background: 222 47% 5;
-  --foreground: 210 20% 98%;
-  --bg-base: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-glow: rgba(59, 130, 246, 0.1);
-  --text-primary: #f8fafc;
-  --text-muted: #94a3b8;
-  --brand-500: 217 91% 60%;
+  --color-primary: 0 100% 27%;      /* #8B0000 */
+  --color-secondary: 288 40% 88%;   /* #E0BBE4 */
+  --color-accent: 51 100% 50%;      /* #FFD700 */
+
+  --background-base: 0 100% 5%;     /* #1A0000 (Very Dark Red/Brown) */
+  --text-primary: 0 0% 98%;         /* Light text */
+  --text-muted: 215 15% 65%;        /* Muted light text */
+
+  --glass-overlay-rgb: 255, 255, 255;
+  --glass-bg-opacity: 0.08; /* As per Coding Rules: rgba(255, 255, 255, 0.08) */
+  --glass-border-opacity: 0.1;  /* As per Coding Rules: rgba(255, 255, 255, 0.1) */
 }
 
-/* ── Light Mode Tokens ── */
-.light {
-  --background: 0 0% 98%;
-  --foreground: 222 47% 11%;
-  --bg-base: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-glow: rgba(59, 130, 246, 0.08);
-  --text-primary: #0f172a;
-  --text-muted: #64748b;
-  --brand-500: 217 91% 60%;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--bg-base);
-  color: var(--text-primary);
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* Tema geçişleri için sadece body'de transition */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Premium Glassmorphism */
+/* Premium Glassmorphism Classes */
 .glass-card {
-  background: var(--glass-bg);
+  background: rgba(var(--glass-overlay-rgb), var(--glass-bg-opacity));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(var(--glass-overlay-rgb), var(--glass-border-opacity));
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border-radius: 1rem;
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(var(--glass-overlay-rgb), 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(var(--glass-overlay-rgb), 0.1);
 }
 
-/* Yardımcı geçiş sınıfı — Framer Motion kullanılmayan öğeler için */
-.smooth-transition {
-  transition: background-color 0.2s ease, border-color 0.2s ease,
-              color 0.2s ease, opacity 0.2s ease;
+/* Typography Classes */
+.text-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-alt {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
 }
 
 /* Custom Scrollbar */
@@ -69,10 +178,62 @@ body {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* Animation Classes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: minmax(200px, auto);
+}
+
+.bento-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
 }

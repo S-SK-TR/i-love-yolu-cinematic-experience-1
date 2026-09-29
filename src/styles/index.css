@@ -1,0 +1,70 @@
+/* @tailwind base — centralized in src/index.css */
+
+
+
+@layer base {
+  :root {
+    --bg-base: #0a0a0a;
+    --text-primary: #f5f5f5;
+    --primary: #8B0000;
+    --primary-dark: #6A0000;
+    --secondary: #E0BBE4;
+    --secondary-dark: #C09BC3;
+    --accent: #FFD700;
+    --glass-overlay: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --focus-ring: rgba(255, 215, 0, 0.5);
+  }
+
+  /* Reduced motion styles */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Keyboard navigation focus styles */
+  .keyboard-navigation :focus {
+    outline: 2px solid var(--focus-ring) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* High contrast mode */
+  @media (prefers-contrast: more) {
+    :root {
+      --text-primary: #ffffff;
+      --bg-base: #000000;
+    }
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-overlay);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
